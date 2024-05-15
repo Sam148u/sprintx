@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs"
 import usuario from "../models/usuarios.js";
 
 async function list(request, response){
@@ -18,13 +19,14 @@ async function find(request, response) {
 
 async function create(request, response) {
     const data = request.body;
-  
+    const contrasenia = request.body.password;
+    const hash = await bcrypt.hash(contrasenia, 10);
     // Crear el nuevo usuario
     const nuevoUsuario = await usuario.create({
       nombre: data.nombre,
       apellido: data.apellido,
       email: data.email,
-      password: data.password,
+      password: hash,
     });
     response.json(nuevoUsuario);
 }
@@ -54,11 +56,30 @@ async function destroy(req, res) {
     res.json("Usuario eliminado");
 }
 
+async function login(req, res) {
+  try {
+    const user = await usuario.findOne({ email: req.body.email });
+    if (user !== null) {
+      const hashValido = await bcrypt.compare(req.body.password, user.password);
+      if (hashValido) {
+        res.json("Tus credenciales son correctas");
+      } else {
+        res.json("Tus credenciales son INCORRECTAS :(");
+      }
+    } else {
+      res.json("Tus credenciales son INCORRECTAS :(");
+    }
+  } catch (err) {
+    res.status(500).json("Internal server error");
+  }
+}
+
 export default{
     list,
     find,
     create,
     update,
     destroy,
+    login,
 }
 

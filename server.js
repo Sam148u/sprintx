@@ -26,6 +26,7 @@ app.get("/api/usuarios/:id", usuariosController.find);
 app.post("/api/usuarios", usuariosController.create);
 app.patch("/api/usuarios/:id", usuariosController.update);
 app.delete("/api/usuarios/:id", usuariosController.destroy);
+app.post("/api/login", usuariosController.login);
 
 // Rutas para la entidad Compra
 app.post("/api/compras", comprasController.create);
