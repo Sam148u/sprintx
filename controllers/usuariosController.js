@@ -1,4 +1,5 @@
 import bcrypt from "bcryptjs"
+import jwt from "jsonwebtoken";
 import usuario from "../models/usuarios.js";
 
 async function list(request, response){
@@ -62,7 +63,12 @@ async function login(req, res) {
     if (user !== null) {
       const hashValido = await bcrypt.compare(req.body.password, user.password);
       if (hashValido) {
-        res.json("Tus credenciales son correctas");
+        const tokenPayload = {
+          sub: user.id, // subject
+          iat: Date.now(), // issued at
+        };
+        const token = jwt.sign(tokenPayload, "whatEver");
+        res.json({ token: token });
       } else {
         res.json("Tus credenciales son INCORRECTAS :(");
       }
@@ -74,6 +80,11 @@ async function login(req, res) {
   }
 }
 
+async function profile(req, res){
+  const { email } = await usuario.findById(req.auth.sub);
+  res.json(`Hola ${email}, te damos acceso a tu perfil`)
+}
+
 export default{
     list,
     find,
@@ -81,5 +92,6 @@ export default{
     update,
     destroy,
     login,
+    profile,
 }
 

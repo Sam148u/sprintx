@@ -1,4 +1,5 @@
 import express from "express"
+import { expressjwt } from "express-jwt";
 import generosController from "./controllers/generosController.js"
 import articulosController from "./controllers/articulosController.js"
 import usuariosController from "./controllers/usuariosController.js"
@@ -27,6 +28,12 @@ app.post("/api/usuarios", usuariosController.create);
 app.patch("/api/usuarios/:id", usuariosController.update);
 app.delete("/api/usuarios/:id", usuariosController.destroy);
 app.post("/api/login", usuariosController.login);
+
+app.post(
+    "/api/users/profile",
+    expressjwt({ algorithms: ["HS256"], secret: "whatEver" }),
+    usuariosController.profile
+  );
 
 // Rutas para la entidad Compra
 app.post("/api/compras", comprasController.create);
