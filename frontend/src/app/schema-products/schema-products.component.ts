@@ -8,9 +8,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './schema-products.component.css'
 })
 export class SchemaProductsComponent {
-  @Input() name='';
-  @Input() price='';
-  @Input() description='';
-  @Input() imageUrl='';
-  @Input() featured:boolean=false;
+  @Input() name: string='';
+  @Input() price: string='';
+  
+  @Input() imageUrl: string ='';
+  
 }

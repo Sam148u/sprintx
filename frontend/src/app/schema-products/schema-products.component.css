@@ -4,19 +4,14 @@
     border-radius: 4px;
     padding: 16px;
     margin: 16px;
-    width: 200px;
+    max-width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-  }
-  
-  .product-card.featured {
-    border-color: #f39c12;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fffbe6;
+    background-color: azure;
   }
   
   .product-card img {
-    max-width: 200px;
+    max-width: 250px;
     height: 200px;
   }
   
