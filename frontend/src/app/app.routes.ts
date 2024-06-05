@@ -7,6 +7,6 @@ import { ShopdetailComponent } from './shopdetail/shopdetail.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ProductListComponent },
-  { path: 'detail/:id', component: DetailComponent }, // localhost:4200/detail
-  { path: 'shopdetail', component: ShopdetailComponent }
+  { path: 'detail/:id', component: DetailComponent }, 
+  { path: 'shopdetail', component: ShopdetailComponent } // localhost:4200/detail
 ];

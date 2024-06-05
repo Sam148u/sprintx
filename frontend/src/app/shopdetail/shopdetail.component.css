@@ -2,3 +2,7 @@ body {
     background-color: aquamarine;
     font-family: Arial, sans-serif;
 }
+p {
+    font-size: 18px;
+    color: aliceblue;
+}
