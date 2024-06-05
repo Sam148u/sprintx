@@ -2,9 +2,11 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { ShopdetailComponent } from './shopdetail/shopdetail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ProductListComponent },
   { path: 'detail/:id', component: DetailComponent }, // localhost:4200/detail
+  { path: 'shopdetail', component: ShopdetailComponent }
 ];
