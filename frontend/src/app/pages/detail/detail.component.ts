@@ -31,7 +31,7 @@ export class DetailComponent {
   increment() {
     let value = this.quantity.value;
     this.quantity.setValue(value + 1);
-    // Aquí puedes agregar la lógica adicional que quieras ejecutar cuando se haga clic en el botón
+  
   }
   
   decrement() {
