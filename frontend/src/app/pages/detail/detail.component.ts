@@ -1,11 +1,12 @@
-import { Component, Input , inject , signal } from '@angular/core';
+import { Component, Input, inject, signal } from '@angular/core';
 import { ProductsService } from '../../service/products.service';
 import { Products } from '../../model/products';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
@@ -15,7 +16,7 @@ export class DetailComponent {
   private productService = inject(ProductsService);
 
   product = signal<null | Products>(null);
-
+  quantity: FormControl = new FormControl(1);
   // Voy a obtener una receta a través del método getOneRecipeById...
   // CUANDO?? CUANDO EL COMPONENTE SE INICIALICE (SE CARGUE)
 
@@ -26,5 +27,17 @@ export class DetailComponent {
       this.product.set(this.productService.getOneRecipeById(Number(this.id)));
     }
   }
-
+  
+  increment() {
+    let value = this.quantity.value;
+    this.quantity.setValue(value + 1);
+    // Aquí puedes agregar la lógica adicional que quieras ejecutar cuando se haga clic en el botón
+  }
+  
+  decrement() {
+    let value = this.quantity.value;
+    if (value > 1) {
+      this.quantity.setValue(value - 1);
+    }
+  } 
 }
