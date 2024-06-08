@@ -9743,4 +9743,52 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav{
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #333334;
+  font-size: 20px;
+}
 
+.menu-horizontal{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.menu-horizontal >li >a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+.menu-horizontal > li:hover{
+  background-color: #d39e00;
+}
+.menu-vertical{
+  position:absolute;
+  display: none;
+  list-style: none;
+  
+  z-index: 999;
+  background-color: rgba(0,0,0, .5);
+
+}
+.menu-horizontal li:hover .menu-vertical{
+  display: block;
+}
+.menu-vertical li:hover{
+  background-color: black;
+}
+.menu-vertical li a{
+  color: white;
+  text-decoration: none;
+  text-align: start;
+  display: block;
+  padding: 15px 20px;
+}
