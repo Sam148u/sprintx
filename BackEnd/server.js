@@ -4,10 +4,10 @@ import generosController from "./controllers/generosController.js"
 import articulosController from "./controllers/articulosController.js"
 import usuariosController from "./controllers/usuariosController.js"
 import comprasController from "./controllers/comprasController.js"
+import cors from "cors"
+const app = express();
 
-
-const app = express()
-
+app.use(cors());
 app.use(express.json())
 
 // Rutas para la entidad articulos
@@ -24,7 +24,7 @@ app.post("/api/generos", generosController.create);
 
 app.get("/", usuariosController.list);
 app.get("/api/usuarios/:id", usuariosController.find);
-app.post("/api/usuarios", usuariosController.create);
+app.post("/api/register", usuariosController.create);
 app.patch("/api/usuarios/:id", usuariosController.update);
 app.delete("/api/usuarios/:id", usuariosController.destroy);
 app.post("/api/login", usuariosController.login);

@@ -24,8 +24,8 @@ async function create(request, response) {
     const hash = await bcrypt.hash(contrasenia, 10);
     // Crear el nuevo usuario
     const nuevoUsuario = await usuario.create({
-      nombre: data.nombre,
-      apellido: data.apellido,
+      firstname: data.firstname,
+      lastname: data.lastname,
       email: data.email,
       password: hash,
     });
@@ -39,8 +39,8 @@ async function update(req, res) {
   
     
   
-    UsuarioEncontrado.nombre = req.body.nombre || UsuarioEncontrado.nombre;
-    UsuarioEncontrado.apellido = req.body.apellido || UsuarioEncontrado.apellido;
+    UsuarioEncontrado.firstname = req.body.firstname || UsuarioEncontrado.firstname;
+    UsuarioEncontrado.lastname = req.body.lastname || UsuarioEncontrado.lastname;
     UsuarioEncontrado.email = req.body.email || UsuarioEncontrado.email;
     UsuarioEncontrado.password = req.body.password || UsuarioEncontrado.password;
   

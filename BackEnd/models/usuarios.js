@@ -1,8 +1,8 @@
 import mongoose from "../config/mongooseConfig.js";
 
 const UsuarioSchema = mongoose.Schema({
-    nombre: String,
-    apellido: String,
+    firstname: String,
+    lastname: String,
     email: String,
     password: String,
   });
