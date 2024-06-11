@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ParseSourceFile } from '@angular/compiler';
 import { Injectable, inject } from '@angular/core';
 
 
@@ -18,6 +19,12 @@ export class UserService {
       password: formValues.password
     }
   )
+  }
+  login(formValues: any){
+    return this.http.post("http://localhost:3000/api/login",{
+      email: formValues.email,
+      password: formValues.password
+    })
   }
   constructor() { }
 }
