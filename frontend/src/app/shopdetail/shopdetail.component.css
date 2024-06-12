@@ -2,7 +2,20 @@ body {
     background-color: aquamarine;
     font-family: Arial, sans-serif;
 }
+  
+.container {
+    display: flex;
+    align-items: center;
+  }
+img {
+    
+    margin-right: 10px;
+    width: 150px;
+    height: 150px;
+}
 p {
+    text-align: center;
+    flex-grow: 0.86;
     font-size: 18px;
     color: aliceblue;
 }
