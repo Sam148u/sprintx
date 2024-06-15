@@ -13,6 +13,7 @@ import { TenisComponent } from './tenis/tenis.component';
 import { BeisbolComponent } from './beisbol/beisbol.component';
 import { FutbolComponent } from './futbol/futbol.component';
 import { CartGuard } from './guard/cart.guard';
+import { LoginGuard } from './guard/login.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,8 +22,8 @@ export const routes: Routes = [
   { path: 'shopdetail', component: ShopdetailComponent }, // localhost:4200/detail
   { path: 'ShoppingCart', component: CartComponent, canActivate:[CartGuard] },
   { path: 'checkout', component: CheckoutComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
+  {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
   { path: 'parkour', component: ParkourComponent },
   { path: 'natacion', component: NatacionComponent },
   { path: 'tenis', component: TenisComponent },
