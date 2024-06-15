@@ -1,18 +1,31 @@
 body {
-    background-color: aquamarine;
     font-family: Arial, sans-serif;
+    margin: 0; /* Elimina el margen predeterminado del body */
 }
-  
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://ih1.redbubble.net/image.278071713.7818/flat,750x,075,f-pad,750x1000,f8f8f8.u3.jpg");
+    background-size: cover;
+    background-position: center center;
+    z-index: -1; /* Asegura que la capa esté detrás del contenido */
+}
+
 .container {
     display: flex;
     align-items: center;
-  }
+}
+
 img {
-    
     margin-right: 10px;
     width: 150px;
     height: 150px;
 }
+
 p {
     text-align: center;
     flex-grow: 0.86;
