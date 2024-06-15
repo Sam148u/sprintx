@@ -9792,3 +9792,9 @@ nav{
   display: block;
   padding: 15px 20px;
 }
+.logout-link{
+  cursor: pointer;
+}
+/* li[ngIf] > a {
+  cursor: pointer;
+} */

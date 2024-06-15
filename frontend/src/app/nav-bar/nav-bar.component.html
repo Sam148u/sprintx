@@ -50,9 +50,11 @@
             <ul class="menu-vertical">
                 <li><a routerLink="/login">Sign In -----</a></li>
                 <li><a routerLink="/register">Sign Up</a></li>
+                
             </ul>
         </li>
         <li><a routerLink="/ShoppingCart"><i class="fas fa-shopping-cart text-primary"></i>ShoppingCart</a></li>
+        <li *ngIf="isLogged()"><a class="logout-link" (click)="logout()" >Logout</a></li>
     </ul>
     
 </nav>

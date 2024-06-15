@@ -26,5 +26,16 @@ export class UserService {
       password: formValues.password
     })
   }
+  isLogged() {
+    if(localStorage.getItem("user_token")) {
+      return true
+    } else {
+      return false
+    }
+  }
+  removeToken() {
+    localStorage.removeItem("user_token")
+    return;
+  }
   constructor() { }
 }
