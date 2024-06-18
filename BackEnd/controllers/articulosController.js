@@ -26,7 +26,8 @@ async function create(request,response) {
     // Crear el nuevo usuario
     const nuevoArticulo = await articulo.create({
         name: data.name,
-        precio : data.precio,
+        price : data.precio,
+        imageUrl: data.imageUrl,
         talla: data.talla,
         descripcion : data.descripcion,
         generos : data.generos

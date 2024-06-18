@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json())
 
 // Rutas para la entidad articulos
-app.get('/', articulosController.list)
+app.get("/articulos", articulosController.list)
 app.get("/api/articulos/:id", articulosController.find)
 app.post("/api/articulos", articulosController.create)
 app.patch("/api/articulos/:id", articulosController.update);
