@@ -1,4 +1,4 @@
-<h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">All Products</span></h2>
+<!-- <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">All Products</span></h2>
 
   <div class="row px-xl-5">
     
@@ -16,7 +16,20 @@
         }
      
    
-  </div>
+  </div> -->
 
 <!-- [description]="product.description"
 [featured]="product.featured" -->
+<div *ngIf="products.length > 0; else noProducts" class="card-container">
+  <div *ngFor="let product of products" class="card">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img">
+    <div class="card-content">
+      <h2>{{ product.name }}</h2>
+      <p>Price: {{ product.price }}</p>
+      <a [routerLink]="['/detail/', product.id]" class="btn">View Details</a>
+    </div>
+  </div>
+</div>
+<ng-template #noProducts>
+  <p>No products available.</p>
+</ng-template>
