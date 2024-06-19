@@ -1,16 +1,18 @@
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
-import usuario from "../models/usuarios.js";
+import Usuario from "../models/usuarios.js";
 
 async function list(request, response){
-    const listaDeUsuarios = usuario.find();
+    
+    const listaDeUsuarios = await Usuario.find({});
+    
     response.json(listaDeUsuarios);
 }
 
 async function find(request, response) {
     try {
       const usuarioId = request.params.id;
-      const Usuario = await usuario.findById(usuarioId);
+      const Usuario = await Usuario.findById(usuarioId);
   
       response.json(Usuario);
     } catch (err) {
@@ -23,7 +25,7 @@ async function create(request, response) {
     const contrasenia = request.body.password;
     const hash = await bcrypt.hash(contrasenia, 10);
     // Crear el nuevo usuario
-    const nuevoUsuario = await usuario.create({
+    const nuevoUsuario = await Usuario.create({
       firstname: data.firstname,
       lastname: data.lastname,
       email: data.email,
@@ -34,7 +36,7 @@ async function create(request, response) {
 
 async function update(req, res) {
     
-    const UsuarioEncontrado = await usuario.findById(req.params.id);
+    const UsuarioEncontrado = await Usuario.findById(req.params.id);
     
   
     
@@ -52,14 +54,14 @@ async function update(req, res) {
 
 async function destroy(req, res) {
     
-    await usuario.findByIdAndDelete(req.params.id);
+    await Usuario.findByIdAndDelete(req.params.id);
     // Armar la respuesta
     res.json("Usuario eliminado");
 }
 
 async function login(req, res) {
   try {
-    const user = await usuario.findOne({ email: req.body.email });
+    const user = await Usuario.findOne({ email: req.body.email });
     if (user !== null) {
       const hashValido = await bcrypt.compare(req.body.password, user.password);
       if (hashValido) {
@@ -81,7 +83,7 @@ async function login(req, res) {
 }
 
 async function profile(req, res){
-  const { email } = await usuario.findById(req.auth.sub);
+  const { email } = await Usuario.findById(req.auth.sub);
   res.json(`Hola ${email}, te damos acceso a tu perfil`)
 }
 

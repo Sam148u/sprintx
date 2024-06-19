@@ -22,7 +22,7 @@ app.post("/api/generos", generosController.create);
 
 // Rutas para la entidad usuarios
 
-app.get("/", usuariosController.list);
+app.get("/api/users", usuariosController.list);
 app.get("/api/usuarios/:id", usuariosController.find);
 app.post("/api/register", usuariosController.create);
 app.patch("/api/usuarios/:id", usuariosController.update);
