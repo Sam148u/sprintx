@@ -3,6 +3,7 @@ import { SchemaProductsComponent } from '../schema-products/schema-products.comp
 import { ProductsService } from '../service/products.service';
 import { RouterLinkWithHref } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class ProductListComponent {
   products: any[] = [];
   private productsService = inject(ProductsService);
+  private cartService = inject(CartService)
 
   // products = this.productsService.products; 
   ngOnInit(): void {
@@ -21,5 +23,9 @@ export class ProductListComponent {
       this.products = data;
     });
     
+  }
+  addToCart(product:any){
+    console.log(product)
+    this.cartService.addToCart(product)
   }
 }

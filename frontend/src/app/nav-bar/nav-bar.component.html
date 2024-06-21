@@ -28,6 +28,7 @@
         <p class="m-0">Customer Service</p>
         <h5 class="m-1">(+57) 3014332301</h5>
     </div>
+    
 </div>
 <nav>
     
@@ -53,11 +54,25 @@
                 
             </ul>
         </li>
-        <li><a routerLink="/ShoppingCart"><i class="fas fa-shopping-cart text-primary"></i>ShoppingCart</a></li>
+        <li><a (click)="toggleCartVisibility()"><i class="fas fa-shopping-cart text-primary"></i>ShoppingCart</a></li>
         <li *ngIf="isLogged()"><a class="logout-link" (click)="logout()" >Logout</a></li>
+        
     </ul>
+    <aside [ngClass]="showCart() ? 'cart show' : 'cart' ">
+        <h2>Carrito {{ cart().size }}<button class="close" (click)="toggleCartVisibility()">Close</button></h2>
+        <section class="cart-products">
+            @for(cartProduct of cart().values(); track cartProduct._id) {
+                <app-cart [product]="cartProduct" />
+                }
+        </section>
+        <div class="details">
+            <h3>Total <span>$ 1000000</span></h3>
+            <a routerLink="/checkout" class="checkout">Checkout</a>
+        </div>
+    </aside>
     
 </nav>
+
 <!-- <div class="container-fluid bg-dark mb-30">
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
