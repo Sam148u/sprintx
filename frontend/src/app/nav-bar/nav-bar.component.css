@@ -9819,14 +9819,6 @@ aside.cart.show {
   transform: translateX(0);
 }
 
-/* aside.close {
-  position: absolute;
-  right: 20px;
-  /* top: 23px; 
-  background: none;
-  border: none;
-} */
-
 aside a.checkout {
   width: 100%;
   display: inline-block;
@@ -9846,12 +9838,13 @@ section.cart-products {
   gap: 20px;
   flex-grow: 1;
   margin-top: 2rem;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 200px); /* Adjust based on your layout */
 }
-
-
 
 aside.details h3 {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
 } 
+
