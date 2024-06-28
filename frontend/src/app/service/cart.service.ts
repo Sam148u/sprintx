@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, computed } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +6,17 @@ import { Injectable, signal } from '@angular/core';
 export class CartService {
 
   products = signal(new Map())
+
+  total = computed(() => {
+    const productsMap = this.products();
+    let total = 0;
+
+    productsMap.forEach(product => {
+      total += product.price * product.quantity;
+    });
+
+    return total;
+  });
 
   addToCart(product: any) {
     this.products.update((mapActual: any) => {
@@ -45,6 +56,12 @@ export class CartService {
       }
 
       return new Map(mapActual)
+    })
+  }
+  deleteProduct(productId: string) {
+    this.products.update(productsMap => {
+      productsMap.delete(productId);
+      return new Map(productsMap)
     })
   }
 

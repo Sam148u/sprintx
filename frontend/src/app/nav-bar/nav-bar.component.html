@@ -66,7 +66,7 @@
                 }
         </section>
         <div class="details">
-            <h3>Total <span>$ 123</span></h3>
+            <h3>Total <span>{{ total() | currency }}</span></h3>
             <a routerLink="/checkout" class="checkout">Checkout</a>
         </div>
     </aside>

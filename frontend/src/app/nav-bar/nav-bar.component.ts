@@ -20,6 +20,7 @@ export class NavBarComponent{
   private cartService = inject(CartService)
 
   cart = this.cartService.products
+  total = this.cartService.total;
   showCart = signal(false)
 
   toggleCartVisibility() {

@@ -30,5 +30,9 @@ export class CartComponent {
   decrement(productId: string) {
     this.cartService.decrementQuantity(productId)
   }
+  
+  delete(productId: string) {
+    this.cartService.deleteProduct(productId)
+  }
 
 }
