@@ -4,7 +4,7 @@ const ArticuloSchema = mongoose.Schema(
     
     {
         name: String,
-        price: String,
+        price: Number,
         imageUrl: String,
         talla: String,
         descripcion: String,
