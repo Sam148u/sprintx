@@ -2,15 +2,18 @@ import Compra from "../models/compras.js"
 
 async function create(req, res){
     try {
-        const { usuario, producto, total } = req.body;
-        const nuevaCompra = await Compra.create({
-            usuario,
-            producto,
-            total
-        });
-        res.json(nuevaCompra);
+        const newOrder = await Compra.create({
+            user: req.auth.id,
+            products: req.body.products,
+            total: req.body.total,
+            paymentMethod: req.body.paymentMethod,
+            name: req.body.name,
+            address: req.body.address,
+            NumberCard: req.body.NumberCard
+        })
+        return res.json(newOrder)
     } catch (err) {
-        res.status(500).json({ message: "Error al crear la compra", error: err });
+        console.log(err)
     }
 }
 

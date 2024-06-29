@@ -36,7 +36,7 @@ app.post(
   );
 
 // Rutas para la entidad Compra
-app.post("/api/compras", comprasController.create);
+app.post("/api/compras", expressjwt({ algorithms: ["HS256"], secret: "whatEver" }), comprasController.create);
 app.get("/api/compras", comprasController.list);
 app.get("/api/compras/:id", comprasController.find);
 app.put("/api/compras/:id", comprasController.update);
