@@ -2,11 +2,11 @@ import mongoose from "../config/mongooseConfig.js";
 
 // Definición del esquema de Compra
 const CompraSchema = mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario' },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "Usuario" },
     products: [{
-        productDetail: {
+        product: {
             type: mongoose.Types.ObjectId,
-            ref: "Product"
+            ref: "Articulo"
         },
         quantity: Number
     }],
