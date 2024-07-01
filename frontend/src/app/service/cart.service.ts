@@ -73,15 +73,16 @@ export class CartService {
 
     const mapToArray = Array.from(this.products().values())
     const productsArray = mapToArray.map(product => {
-      return { productId: product._id, quantity: product.quantity }
+      return { product: product._id, quantity: product.quantity }
     })
 
     console.log(productsArray)
 
-
+    
     return this.http.post(
       "http://localhost:3000/api/compras",
       {
+        
         products: productsArray,
         total: this.total(),
         name: formData.name,

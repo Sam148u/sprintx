@@ -14,6 +14,7 @@ import { BeisbolComponent } from './beisbol/beisbol.component';
 import { FutbolComponent } from './futbol/futbol.component';
 import { CartGuard } from './guard/cart.guard';
 import { LoginGuard } from './guard/login.guard';
+import { ThanksComponent } from './pages/thanks/thanks.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ export const routes: Routes = [
   { path: 'natacion', component: NatacionComponent },
   { path: 'tenis', component: TenisComponent },
   { path: 'beisbol', component: BeisbolComponent },
-  { path: 'futbol', component: FutbolComponent }
+  { path: 'futbol', component: FutbolComponent },
+  {path: 'thanks' , component: ThanksComponent}
 ];
 
