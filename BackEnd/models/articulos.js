@@ -1,6 +1,6 @@
-import mongoose from "../config/mongooseConfig.js";
+import mongoose from 'mongoose';
 
-const ArticuloSchema = mongoose.Schema(
+const ArticuloSchema = new mongoose.Schema(
     
     {
         name: String,
@@ -19,4 +19,12 @@ const ArticuloSchema = mongoose.Schema(
 
 const Articulo = mongoose.model("Articulo", ArticuloSchema)
 
+<<<<<<< HEAD
 export default Articulo;
+=======
+export default articulo;
+
+
+
+
+>>>>>>> b890e83 (filter articulos)

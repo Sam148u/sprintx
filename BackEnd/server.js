@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json())
 
 // Rutas para la entidad articulos
+
 app.get("/articulos", articulosController.list)
 app.get("/api/articulos/:id", articulosController.find)
 app.post("/api/articulos", articulosController.create)
@@ -41,6 +42,25 @@ app.get("/api/compras", comprasController.list);
 app.get("/api/compras/:id", comprasController.find);
 app.put("/api/compras/:id", comprasController.update);
 app.delete("/api/compras/:id", comprasController.destroy);
+
+
+
+import mongoose from 'mongoose';
+import { getArticulosByGenero } from './controllers/articulosController.js';
+
+
+// Conexión a MongoDB
+mongoose.connect('mongodb://localhost:27017/prueba-mongodb', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+// Middleware
+app.use(express.json());
+
+// Rutas
+app.get('/api/articulos', getArticulosByGenero);
+
 
 app.listen(3000, () => {
     console.log("El servidor esta corriendo en el puerto 3000")
