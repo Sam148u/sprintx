@@ -183,13 +183,13 @@ sup {
 }
 
 a {
-  color: #FFD333;
+  color: #ffffff;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #e6b400;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -397,7 +397,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #3D464D;
+  color: #ffffff;
 }
 
 h1, .h1 {
@@ -6187,7 +6187,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #FFFFFF !important;
+  background-color: #008bdb !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -9848,3 +9848,13 @@ aside.details h3 {
   margin-top: 2rem;
 } 
 
+.logitienda {
+  
+  overflow: hidden;
+  
+}
+.logotienda img {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
