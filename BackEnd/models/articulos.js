@@ -19,12 +19,12 @@ const ArticuloSchema = new mongoose.Schema(
 
 const Articulo = mongoose.model("Articulo", ArticuloSchema)
 
-<<<<<<< HEAD
+
 export default Articulo;
-=======
-export default articulo;
 
 
 
 
->>>>>>> b890e83 (filter articulos)
+
+
+
