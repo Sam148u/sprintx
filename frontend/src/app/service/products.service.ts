@@ -20,7 +20,7 @@ export class ProductsService {
     if (price) {
       params = params.append('price', price);
     }
-    return this.http.get("http://3.23.86.39:3000/articulos",
+    return this.http.get("http://18.217.23.211:3000/articulos",
       {
         params
       }
@@ -29,7 +29,7 @@ export class ProductsService {
   constructor() { }
   
   getOneProductById(id: string) {
-    return this.http.get("http://3.23.86.39:3000/api/articulos/" + id)
+    return this.http.get("http://18.217.23.211:3000/api/articulos/" + id)
     
   }
 }

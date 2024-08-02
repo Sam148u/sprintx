@@ -80,7 +80,7 @@ export class CartService {
 
     
     return this.http.post(
-      "http://3.23.86.39:3000/api/compras",
+      "http://18.217.23.211:3000/api/compras",
       {
         
         products: productsArray,

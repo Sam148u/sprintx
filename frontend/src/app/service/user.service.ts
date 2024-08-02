@@ -11,7 +11,7 @@ export class UserService {
   private http= inject(HttpClient)
 
   register(formValues: any){
-    return this.http.post("http://3.23.86.39:3000/api/register",
+    return this.http.post("http://18.217.23.211:3000/api/register",
     {
       firstname: formValues.firstname,
       lastname: formValues.lastname,
@@ -21,7 +21,7 @@ export class UserService {
   )
   }
   login(formValues: any){
-    return this.http.post("http://3.23.86.39:3000/api/login",{
+    return this.http.post("http://18.217.23.211:3000/api/login",{
       email: formValues.email,
       password: formValues.password
     })
