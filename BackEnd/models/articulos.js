@@ -8,12 +8,7 @@ const ArticuloSchema = new mongoose.Schema(
         imageUrl: String,
         talla: String,
         descripcion: String,
-        generos: [
-            {
-              type: mongoose.Types.ObjectId,
-              ref: "Genero",
-            },
-          ],
+        
     }
 )
 
