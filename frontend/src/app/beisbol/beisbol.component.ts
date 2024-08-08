@@ -31,7 +31,7 @@ articulos: any;
 
   async obtenerArticulosDesdeAPI(): Promise<void> {
     try {
-      const url = 'http://18.217.23.211:3000/articulos'; 
+      const url = 'http://3.15.230.254:3000/articulos'; 
       const response = await fetch(url);
       const data = await response.json();
       this.beisbolItems = data;
