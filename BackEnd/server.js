@@ -50,7 +50,7 @@ import { getArticulosByGenero } from './controllers/articulosController.js';
 
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://3.15.230.254:27017/prueba-mongodb', {useNewUrlParser: true,useUnifiedTopology: true})
+//mongoose.connect('mongodb://database:27017/prueba-mongodb', {useNewUrlParser: true,useUnifiedTopology: true})
 
 // Middleware
 app.use(express.json());
