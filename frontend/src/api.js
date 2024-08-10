@@ -6,4 +6,3 @@ function obtenerArticulos() {
 
 
 
-export { obtenerArticulos, GetArticulosByGenero };

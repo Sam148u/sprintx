@@ -1,6 +1,6 @@
 import express from "express"
 import { expressjwt } from "express-jwt";
-import generosController from "./controllers/generosController.js"
+
 import articulosController from "./controllers/articulosController.js"
 import usuariosController from "./controllers/usuariosController.js"
 import comprasController from "./controllers/comprasController.js"
@@ -18,8 +18,8 @@ app.post("/api/articulos", articulosController.create)
 app.patch("/api/articulos/:id", articulosController.update);
 app.delete("/api/articulos/:id", articulosController.destroy);
 
-// Ruta para la entidad genero
-app.post("/api/generos", generosController.create);
+
+
 
 // Rutas para la entidad usuarios
 
@@ -46,7 +46,7 @@ app.delete("/api/compras/:id", comprasController.destroy);
 
 
 import mongoose from 'mongoose';
-import { getArticulosByGenero } from './controllers/articulosController.js';
+
 
 
 // Conexión a MongoDB
@@ -56,7 +56,7 @@ import { getArticulosByGenero } from './controllers/articulosController.js';
 app.use(express.json());
 
 // Rutas
-app.get('/api/articulos', getArticulosByGenero);
+
 
 
 app.listen(3000, () => {

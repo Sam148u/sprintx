@@ -4,14 +4,14 @@ import articulo from "../models/articulos.js";
 
 async function list(request,response){
 
-    const listaDeArticulos = await articulo.find().populate('generos');
+    const listaDeArticulos = await articulo.find().populate('');
     response.json(listaDeArticulos)
 }
 
 async function find(request,response){
     try{
         const articuloId = request.params.id
-        const Articulo = await articulo.findById(articuloId).populate('generos');
+        const Articulo = await articulo.findById(articuloId).populate('');
 
     response.json(Articulo)
 
@@ -31,7 +31,7 @@ async function create(request,response) {
         imageUrl: data.imageUrl,
         talla: data.talla,
         descripcion : data.descripcion,
-        generos : data.generos
+        
         
     })
     response.json(nuevoArticulo)
@@ -78,21 +78,3 @@ export default {
 
 
 // Función para obtener artículos por género
-const getArticulosByGenero = async (req, res) => {
-    try {
-        const { generos } = req.query; // Obtener el parámetro de consulta
-        let articulos;
-        if (generos) {
-            articulos = await articulo.find({ generos });
-        } else {
-            articulos = await articulo.find(); // Si no se especifica género, devolver todos los artículos
-        }
-        res.json(articulos);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-};
-
-export {
-    getArticulosByGenero,
-};
