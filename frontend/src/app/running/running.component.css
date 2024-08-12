@@ -4408,7 +4408,7 @@ p {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #0000;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
   }
@@ -9798,7 +9798,7 @@ p {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #009929;
     color: white;
     text-decoration: none;
     border-radius: 5px;
