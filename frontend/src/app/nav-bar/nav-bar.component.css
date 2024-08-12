@@ -9768,7 +9768,7 @@ nav{
   padding: 15px 20px;
 }
 .menu-horizontal > li:hover{
-  background-color: #d39e00;
+  background-color: #000;
 }
 .menu-vertical{
   position:absolute;

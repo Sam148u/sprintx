@@ -8,10 +8,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ParkourComponent } from './parkour/parkour.component';
-import { NatacionComponent } from './natacion/natacion.component';
-import { TenisComponent } from './tenis/tenis.component';
-import { BeisbolComponent } from './beisbol/beisbol.component';
-import { FutbolComponent } from './futbol/futbol.component';
+import { RunningComponent } from './running/running.component';
 import { CartGuard } from './guard/cart.guard';
 import { LoginGuard } from './guard/login.guard';
 import { ThanksComponent } from './pages/thanks/thanks.component';
@@ -26,10 +23,7 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
   { path: 'parkour', component: ParkourComponent },
-  { path: 'natacion', component: NatacionComponent },
-  { path: 'tenis', component: TenisComponent },
-  { path: 'beisbol', component: BeisbolComponent },
-  { path: 'futbol', component: FutbolComponent },
+  { path: 'running', component: RunningComponent },
   {path: 'thanks' , component: ThanksComponent}
 ];
 

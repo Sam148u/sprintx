@@ -13,14 +13,14 @@ import { RouterModule } from '@angular/router';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-futbol',
+  selector: 'app-running',
   standalone: true,
   imports: [NgFor, RouterModule],
-  templateUrl: './futbol.component.html',
-  styleUrls: ['./futbol.component.css']
+  templateUrl: './running.component.html',
+  styleUrls: ['./running.component.css']
 })
-export class FutbolComponent implements OnInit {
-  futbolItems: articulos[] = []; 
+export class RunningComponent implements OnInit {
+  runningItems: articulos[] = []; 
 articulos: any;
 
   constructor() { }
@@ -34,7 +34,7 @@ articulos: any;
       const url = 'http://3.15.230.254:3000/articulos'; 
       const response = await fetch(url);
       const data = await response.json();
-      this.futbolItems = data;
+      this.runningItems = data;
       console.log(data);
     } catch (error) {
       console.error('Error al obtener datos desde la API:', error);
