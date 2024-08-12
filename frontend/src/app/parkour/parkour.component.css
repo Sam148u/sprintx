@@ -61,6 +61,7 @@ p {
     --danger: #dc3545;
     --light: #FFFFFF;
     --dark: #3D464D;
+    --black: #0000;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -4403,7 +4404,7 @@ p {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #000;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
   }
@@ -9793,7 +9794,7 @@ p {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #009929;
     color: white;
     text-decoration: none;
     border-radius: 5px;

@@ -32,7 +32,6 @@
     --danger: #dc3545;
     --light: #FFFFFF;
     --dark: #3D464D;
-    --black: #000;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -6161,8 +6160,8 @@
     background-color: #bd2130 !important;
   }
   
-  .bg-black {
-    background-color: #000000 !important;
+  .bg-light {
+    background-color: #0000 !important;
   }
   
   a.bg-light:hover, a.bg-light:focus,
@@ -6172,7 +6171,7 @@
   }
   
   .bg-dark {
-    background-color: #3D464D !important;
+    background-color: #3D464D  !important;
   }
   
   a.bg-dark:hover, a.bg-dark:focus,
