@@ -32,6 +32,7 @@
     --danger: #dc3545;
     --light: #FFFFFF;
     --dark: #3D464D;
+    --black: #0000;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -6160,7 +6161,7 @@
     background-color: #bd2130 !important;
   }
   
-  .bg-light {
+  .bg-black {
     background-color: #000000 !important;
   }
   
