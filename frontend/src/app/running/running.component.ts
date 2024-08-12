@@ -11,6 +11,10 @@ interface articulos {
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { CartService } from '../service/cart.service';
+import { inject } from '@angular/core';
+import { ProductsService } from '../service/products.service';
+
 
 @Component({
   selector: 'app-running',
@@ -19,27 +23,23 @@ import { NgFor } from '@angular/common';
   templateUrl: './running.component.html',
   styleUrls: ['./running.component.css']
 })
+   
 export class RunningComponent implements OnInit {
   runningItems: articulos[] = []; 
-articulos: any;
+  articulos: any;
+  private productsService = inject(ProductsService);
+  private cartService = inject(CartService)
 
-  constructor() { }
-
+  // products = this.productsService.products; 
   ngOnInit(): void {
-    this.obtenerArticulosDesdeAPI(); 
+    this.productsService.productList().subscribe((data: any) => {
+      this.articulos = data;
+    });
+    
   }
-
-  async obtenerArticulosDesdeAPI(): Promise<void> {
-    try {
-      const url = 'http://3.15.230.254:3000/articulos'; 
-      const response = await fetch(url);
-      const data = await response.json();
-      this.runningItems = data;
-      console.log(data);
-    } catch (error) {
-      console.error('Error al obtener datos desde la API:', error);
-    }
+  addToCart(product:any){
+    console.log(product)
+    this.cartService.addToCart(product)
   }
 }
-
 
