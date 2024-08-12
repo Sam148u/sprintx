@@ -7,10 +7,7 @@
             <div class="card-content">
               <h2>{{ articulos.name }}</h2>
               <p>Price: {{ articulos.price }}</p>
-              <div class="add-Cart">
-                <a [routerLink]="['/detail/', articulos._id]" class="btn">Details</a>
-                <button class="btn" (click)="addToCart(articulos)">Add to Cart</button>
-              </div>
+              <a [routerLink]="['/detail/', articulos._id]" class="btn">Ver detalles</a>
             </div>
 </div>
 
