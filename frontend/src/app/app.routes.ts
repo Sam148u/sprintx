@@ -11,7 +11,6 @@ import { ParkourComponent } from './parkour/parkour.component';
 import { RunningComponent } from './running/running.component';
 import { CartGuard } from './guard/cart.guard';
 import { LoginGuard } from './guard/login.guard';
-import { CounterComponent } from './counter.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 
 export const routes: Routes = [
@@ -25,7 +24,6 @@ export const routes: Routes = [
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
   { path: 'parkour', component: ParkourComponent },
   { path: 'running', component: RunningComponent },
-  { path: 'counter', component: CounterComponent },
   {path: 'thanks' , component: ThanksComponent}
 ];
 
