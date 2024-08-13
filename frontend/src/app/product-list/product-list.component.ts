@@ -1,31 +1,41 @@
 import { Component, inject } from '@angular/core';
-import { SchemaProductsComponent } from '../schema-products/schema-products.component';
-import { ProductsService } from '../service/products.service';
-import { RouterLinkWithHref } from '@angular/router';
+
 import { CommonModule } from '@angular/common';
 import { CartService } from '../service/cart.service';
+import { RouterLinkWithHref } from '@angular/router';
+
+import { SchemaProductsComponent } from '../schema-products/schema-products.component';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { loadProducts } from './state/actions';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [SchemaProductsComponent, RouterLinkWithHref, CommonModule],
+  imports: [
+    SchemaProductsComponent,
+    RouterLinkWithHref,
+    CommonModule,
+  ],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products: any[] = [];
-  private productsService = inject(ProductsService);
+  products$!: Observable<any[]>;
   private cartService = inject(CartService)
 
-  // products = this.productsService.products; 
+  constructor(private store: Store<{ products: any[] }>) { }
+
   ngOnInit(): void {
-    this.productsService.productList().subscribe(data => {
-      this.products = data;
-    });
+    this.loadProducts();
+    this.products$ = this.store.select('products');
     
   }
-  addToCart(product:any){
-    console.log(product)
+  loadProducts(): void {
+    this.store.dispatch(loadProducts());
+  }
+
+  addToCart(product: any) {
     this.cartService.addToCart(product)
   }
 }
