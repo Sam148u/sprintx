@@ -7,9 +7,9 @@ const _counterReducer = createReducer(
   initialState,
   on(increment, state => state + 1),
   on(decrement, state => state - 1),
-  on(reset, state => 0)
+  on(reset, _state => 0)
 );
 
-export function counterReducer(state: number | undefined, action: Action<string>) {
+export function counterReducer(state: number | undefined, action: Action) {
   return _counterReducer(state, action);
 }
